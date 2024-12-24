@@ -1,11 +1,16 @@
 /* Container for the entire Word Search component */
+
+.backgroud{
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
 .word-search-container {
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: Arial, sans-serif;
-  background: rgb(229, 245, 246);
+  /* background: rgb(229, 245, 246); */
+  
 }
 
 .word-search-container span{
@@ -60,10 +65,7 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   text-align: center;
   color: rgba(0, 0, 0, 0.8); /* Darker text color */
-  user-select: none;
   touch-action: none;
-  
-  
   /* Prevent text selection */
   user-select: none;
 }
@@ -112,11 +114,11 @@
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(246, 246, 88, 0.7);
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100% );
   color: red;
   padding: 20px;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 14px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -182,7 +184,6 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: #f3f3f3;
     text-align: center;
 }
 
@@ -241,44 +242,7 @@ Found words CSS
 }
 
 
-/* Media queries for tablets (screen width between 600px and 900px) */
-@media (max-width: 900px) and (min-width: 600px) {
-  .word-search-container {
-    font-size: 16px;
-    padding: 20px;
-  }
 
-  .grid {
-    grid-template-columns: repeat(var(--grid-size), 35px); /* Slightly larger cells for tablets */
-    grid-gap: 5px;
-    touch-action: none;
-  }
-
-  .grid-cell {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
-    touch-action: none;
-  }
-  
-
-  .controls h3,
-  .controls span {
-    font-size: 18px;
-  }
-
-  .timer {
-    font-size: 18px;
-  }
-
-  .restart-button {
-    position: static; /* Remove absolute positioning for better alignment */
-    margin: 10px auto; /* Center the button horizontally */
-    display: block; /* Ensure proper layout */
-    font-size: 14px; /* Slightly smaller font for tablets */
-    padding: 8px 16px; /* Adjust padding */
-  }
-}
 
 /* Media queries for mobile devices (screen width less than 600px) */
 @media (max-width: 600px) {
@@ -289,15 +253,15 @@ Found words CSS
 
   /* Grid styling */
   .grid {
-    grid-template-columns: repeat(var(--grid-size), 30px); /* Larger grid cells */
-    grid-gap: 3px;
+    grid-template-columns: repeat(var(--grid-size), 10px); /* Larger grid cells */
+    grid-gap: 0px;
     touch-action: none;
   }
 
   .grid-cell {
-    width: 30px;
-    height: 30px;
-    font-size: 14px; /* Make the font larger for better readability */
+    width: 5px;
+    height: 5px;
+    font-size: 5px; /* Make the font larger for better readability */
     text-align: center;
     display: flex;
     justify-content: center;
@@ -312,7 +276,7 @@ Found words CSS
   }
 
   .grid-cell.selected {
-    background-color: #ffcc00; /* Change to a brighter color to highlight */
+    background-color: #adf977; /* Change to a brighter color to highlight */
     color: #000;
   }
 
@@ -323,7 +287,7 @@ Found words CSS
 
   /* Word list styling */
   .controls h3, .controls span {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     margin-bottom: 10px;
     color: #333;
@@ -331,7 +295,7 @@ Found words CSS
 
   /* Timer styling */
   .timer {
-    font-size: 16px;
+    font-size: 12px;
     color: #e63946;
     font-weight: bold;
     margin: 10px 0;
@@ -339,15 +303,15 @@ Found words CSS
 
   /* Start and restart buttons */
   .start-button, .restart-button {
-    font-size: 16px;
-    padding: 10px 20px;
+    font-size: 14px;
+    padding: 10px 10px;
     background-color: #007bff;
     color: white;
     border-radius: 5px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 10px 0;
+    margin: 5px 0;
   }
 
   .start-button:hover, .restart-button:hover {
@@ -356,9 +320,9 @@ Found words CSS
 
   /* Win pop-up */
   .win-popup {
-    font-size: 22px; /* Larger text for mobile */
+    font-size: 14px; /* Larger text for mobile */
     padding: 15px;
-    background-color: rgba(246, 246, 88, 0.7);
+    /* background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100% / 0.5); */
     color: #333;
     border-radius: 10px;
     text-align: center;
@@ -367,7 +331,7 @@ Found words CSS
 
   .restart-button {
     position: static; /* Use static position for better alignment */
-    width: 90%;
+    width: auto;
     font-size: 14px;
   }
   
@@ -378,7 +342,7 @@ Found words CSS
 
   .start-button {
     padding: 12px 20px;
-    font-size: 18px;
+    font-size: 15px;
   }
 
   /* Ensuring that the words pop out visually */
@@ -387,28 +351,28 @@ Found words CSS
     flex-direction: column;
     align-items: center;
     margin-bottom: 15px;
-    background-color: rgba(255, 255, 255, 0.8);
+    /* background-color: rgba(255, 255, 255, 0.8); */
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
   }
 
   .controls span {
-    font-size: 14px;
+    font-size: 12px;
     color: #ff5722; /* A bright color to make it pop */
   }
-}
-
-@media (max-width: 600px) {
   .grid {
-    grid-template-columns: repeat(var(--grid-size), 30px); /* Larger grid cells */
-    grid-gap: 3px;
+    grid-template-columns: repeat(10, 1fr); /* Reduce columns for smaller screens */
+    grid-gap: 2px; /* Reduce the gap between cells */
+    max-width: 100%;
+    max-height: 50%;
+    margin-top: 10px;
     touch-action: none;
   }
 
   .grid-cell {
-    width: 30px;
-    height: 30px;
-    font-size: 14px; /* Larger text for better readability */
+    width: 20px;
+    height: 20px;
+    font-size: 10px; /* Larger text for better readability */
     text-align: center;
     display: flex;
     justify-content: center;
@@ -423,12 +387,19 @@ Found words CSS
   }
 
   .grid-cell.selected {
-    background-color: #ffcc00; /* Highlight selected cell */
+    background-color: #6b97f7; /* Highlight selected cell */
     color: #000;
   }
 
   .grid-cell.found {
     background-color: #4caf50; /* Found words should have a green background */
     color: white;
+  }
+
+  .found-words-left{
+    font-size: 12px;
+  }
+  .word-list{
+    font-size: 12px;
   }
 }
